@@ -1,0 +1,102 @@
+{
+	"name": "warbler",
+	"publisher": "Joseph Heck",
+	"displayName": "Warbler (heckj/warbler)",
+	"description": "Marking the use of passive voice within Markdown documents",
+	"version": "2020.0.0",
+	"preview": false,
+	"icon": "warbler-icon-128px.png",
+	"galleryBanner": {
+		"color": "#11A7A7",
+		"theme": "light"
+	},
+	"readme": "README.md",
+	"author": {
+		"name": "Joseph Heck"
+	},
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/heckj/warbler.git"
+	},
+	"bugs": {
+		"url": "https://github.com/heckj/warbler/issues",
+		"email": "heckj@mac.com"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"markdown",
+		"NLP",
+		"passive voice"
+	],
+	"activationEvents": [
+		"onLanguage:cwl"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "markdown",
+				"extensions": [
+					".md"
+				],
+				"aliases": [
+					"Markdown",
+					"dm",
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cwl",
+				"scopeName": "source.cwl",
+				"path": "./cwl.tmGrammar.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.javascript": "javascript"
+				}
+			}
+		],
+		"commands": [
+			{
+				"command": "cwl.show_graph",
+				"title": "CWL preview",
+				"category": "Benten",
+				"icon": {
+					"light": "./include/PreviewOnRightPane_16x.svg",
+					"dark": "./include/PreviewOnRightPane_16x_dark.svg"
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "cwl.show_graph",
+					"when": "editorLangId == cwl",
+					"alt": "cwl.show_graph",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"main": "./out/extension",
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"install": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"dependencies": {
+		"ts-md5": "^1.2.7",
+		"vscode-languageclient": "^6.1.3"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.9",
+		"@types/vscode": "^1.41.0",
+		"typescript": "^3.9.3"
+	}
+}
