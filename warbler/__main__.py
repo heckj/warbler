@@ -9,11 +9,14 @@ import logging.config
 import logging
 
 from warbler.version import __version__
-from warbler.langserver.jsonrpc import JSONRPC2Connection, ReadWriter, TCPReadWriter
+from warbler.langserver.jsonrpc import JSONRPC2Connection
+from warbler.langserver.jsonrpc import ReadWriter
+from warbler.langserver.jsonrpc import TCPReadWriter
 from warbler.langserver.server import LangServer
 from warbler.configuration import Configuration
 
 logger = logging.getLogger()
+
 
 # https://stackoverflow.com/a/47075664
 # https://docs.python.org/3.6/library/socketserver.html#socketserver.ForkingMixIn
@@ -41,7 +44,8 @@ def main():
 
     handler = RotatingFileHandler(log_fn, backupCount=5)
     formatter = logging.Formatter(
-        fmt='[%(levelname)-7s] %(asctime)s (%(name)s) %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+        fmt='[%(levelname)-7s] %(asctime)s (%(name)s) %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S')
     handler.setFormatter(formatter)
     if roll_over:
         handler.doRollover()

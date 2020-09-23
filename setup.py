@@ -33,7 +33,7 @@ setup(
     maintainer='Joseph Heck',
     maintainer_email='heckj@mac.com',
     author_email='heckj@mac.com',
-    description='Content-focused language server for markdown that highlights the use of passive voice developed by Joseph Heck',
+    description='Content-focused language server for markdown highlighting passive voice, developed by Joseph Heck',
     url='https://github.com/heckj/warbler',
     long_description=long_description,
     long_description_content_type="text/markdown",

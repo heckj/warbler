@@ -20,4 +20,3 @@ class Definition(CWLLangServerBase):
 
         doc = self.open_documents[doc_uri]
         return doc.definition(position)
-

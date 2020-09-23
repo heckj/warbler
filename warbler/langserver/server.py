@@ -141,6 +141,7 @@ class LangServer(
         try:
             f = getattr(self, method_name)
         except AttributeError as e:
+            logger.info(e)
             f = self.serve_unknown
         return f(client_query)
 
@@ -206,4 +207,3 @@ class LangServer(
     @staticmethod
     def serve_initialized(client_query):
         return {}
-

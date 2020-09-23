@@ -8,12 +8,16 @@ from warbler.configuration import Configuration
 
 test_dir = "./warbler-test-config"
 
+
 def setup():
-    # First we make sure there is no existing config file, say from a previous run
+    # First we make sure there is no existing config file,
+    # say from a previous run
     shutil.rmtree(pathlib.Path(test_dir), ignore_errors=True)
+
 
 def teardown():
     shutil.rmtree(pathlib.Path(test_dir), ignore_errors=True)
+
 
 # monkey patch is amazing!
 # https://docs.pytest.org/en/latest/monkeypatch.html
@@ -26,7 +30,7 @@ def test_basic(monkeypatch):
     config = Configuration()
     config.initialize()
 
-    assert config.cfg_path.exists()    
+    assert config.cfg_path.exists()
     assert config.log_path.exists()
     # assert config.scratch_path.exists()
 

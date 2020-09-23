@@ -38,7 +38,8 @@ class Position(LSPObject):
         return hash((self.line, self.character))
 
     def __eq__(self, other):
-        if not isinstance(other, type(self)): return NotImplemented
+        if not isinstance(other, type(self)):
+            return NotImplemented
         return self.line == other.line and self.character == other.character
 
 
@@ -51,7 +52,8 @@ class Range(LSPObject):
         return hash((self.start, self.end))
 
     def __eq__(self, other):
-        if not isinstance(other, type(self)): return NotImplemented
+        if not isinstance(other, type(self)):
+            return NotImplemented
         return self.start == other.start and self.end == other.end
 
 
@@ -62,7 +64,7 @@ class TextEdit(LSPObject):
 
 
 class Location(LSPObject):
-    def __init__(self, uri, _range: Range=Range(Position(0, 0), Position(0, 0))):
+    def __init__(self, uri, _range: Range = Range(Position(0, 0), Position(0, 0))):
         self.uri = uri
         self.range = _range
 
@@ -77,9 +79,9 @@ class DiagnosticSeverity(IntEnum):
 class Diagnostic(LSPObject):
     def __init__(self,
                  _range: Range, message: str,
-                 severity: DiagnosticSeverity=None,
-                 code: str=None,
-                 source: str=None):
+                 severity: DiagnosticSeverity = None,
+                 code: str = None,
+                 source: str = None):
         self.range = _range
         self.message = message
         self.severity = severity
@@ -90,7 +92,8 @@ class Diagnostic(LSPObject):
         return hash((self.range, self.message))
 
     def __eq__(self, other):
-        if not isinstance(other, type(self)): return NotImplemented
+        if not isinstance(other, type(self)):
+            return NotImplemented
         return self.range == other.range and self.message == other.message
 
 
