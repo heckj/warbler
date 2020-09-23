@@ -36,3 +36,10 @@ Development work:
 - run stand-alone on the CLI
 
     python warbler
+
+- local virtualenv outside of .tox
+
+    python3 -m venv .venv
+    python3 -m pip install --upgrade pip
+    source .venv/bin/activate
+    pip3 install .
