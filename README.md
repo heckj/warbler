@@ -21,3 +21,18 @@ If you don't already have it installed:
 Run tests:
 
     tox
+
+Development work:
+
+- activate the tox generated virtual environment:
+
+    source .tox/py38/bin/activate
+    pip3 install .
+
+- use your the editor happily
+
+    code .
+
+- run stand-alone on the CLI
+
+    python warbler

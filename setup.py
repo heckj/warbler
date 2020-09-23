@@ -20,13 +20,14 @@ setup(
     platforms=['POSIX', 'MacOS', 'Windows'],
     python_requires='>=3.7.0',
     install_requires=[
-        "textacy"
+        "textacy",
+        "spacy"
     ],
-    # entry_points={
-    #     'console_scripts': [
-    #         'warbler = warbler.__main__:main'
-    #     ],
-    # },
+    entry_points={
+        'console_scripts': [
+            'warbler = warbler.__main__:main'
+        ],
+    },
 
     author='Joseph Heck',
     maintainer='Joseph Heck',

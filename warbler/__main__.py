@@ -4,20 +4,16 @@ import sys
 import socketserver
 import pathlib
 
-from .configuration import Configuration
+from logging.handlers import RotatingFileHandler
+import logging.config
+import logging
 
 from warbler.version import __version__
 from warbler.langserver.jsonrpc import JSONRPC2Connection, ReadWriter, TCPReadWriter
 from warbler.langserver.server import LangServer
+from warbler.configuration import Configuration
 
-# from cwlformat.version import __version__ as __cwl_fmt_version__
-# from ruamel.yaml import __version__ as __ruamel_version__
-
-from logging.handlers import RotatingFileHandler
-import logging.config
-import logging
 logger = logging.getLogger()
-
 
 # https://stackoverflow.com/a/47075664
 # https://docs.python.org/3.6/library/socketserver.html#socketserver.ForkingMixIn
@@ -65,9 +61,7 @@ def main():
     logging.basicConfig(level=(logging.DEBUG if args.debug else logging.WARNING))
     logger.addHandler(handler)
 
-    logger.info(f"Warbler {__version__}: Markdown Passive Voice Language Server")
-    # logger.info(f"ruamel.yaml: {__ruamel_version__}")
-    # logger.info(f"cwl-format: {__cwl_fmt_version__}")
+    logger.info("Warbler %s: Markdown Passive Voice Language Server", __version__)
 
     config.initialize()
 
