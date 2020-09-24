@@ -13,7 +13,7 @@ The name was chosen as a [common small songbird](http://www.pacificnorthwestbird
 
 ## Dev Notes
 
-This setup uses tox for most of it's build and such, so you'll need it as a prerequisite. 
+This setup uses tox for most of it's build and such, so you'll need it as a prerequisite.
 If you don't already have it installed:
 
     pip3 install tox
@@ -24,13 +24,13 @@ Run tests:
 
 Development work:
 
-- activate the tox generated virtual environment:
+- lint the code
 
-    source .tox/py38/bin/activate
-    pip3 install .
+    tox -e lint
 
 - use your the editor happily
 
+    tox -e dev
     code .
 
 - run stand-alone on the CLI
@@ -43,3 +43,15 @@ Development work:
     python3 -m pip install --upgrade pip
     source .venv/bin/activate
     pip3 install .
+
+## dev notes
+
+General thesis of this setup:
+
+[client] ---> [LanguageServer]
+
+Processing the docs:
+
+1. convert the incoming markdown file into plain text (w/ markdown & beautifulsoup)
+2. run the resulting text through textacy, filtering for passive voice tagging
+3. link the tags back to locations within the markdown to reference where the issue is happening.

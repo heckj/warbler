@@ -40,7 +40,7 @@ import logging
 logger = logging.getLogger(__name__)
 logger.propagate = True
 
-logging.getLogger("benten.langserver.jsonrpc").propagate = False
+logging.getLogger("warbler.langserver.jsonrpc").propagate = False
 
 
 class TextDocumentSyncKind(IntEnum):
