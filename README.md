@@ -18,6 +18,10 @@ If you don't already have it installed:
 
     pip3 install tox
 
+or
+
+    python3 -m pip install --user tox
+
 Run tests:
 
     tox

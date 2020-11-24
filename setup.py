@@ -18,9 +18,10 @@ setup(
     version=version,
     packages=find_packages(),
     platforms=['POSIX', 'MacOS', 'Windows'],
-    python_requires='>=3.7.0',
+    python_requires='>=3.8.0',
     install_requires=[
         "markdown",
+        "numpy>=1.19.0",
         "textacy",
         "spacy"
     ],
@@ -46,7 +47,7 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
         'Operating System :: POSIX',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3 :: Only'
     ],
     keywords='markdown language passive-voice nlp'
