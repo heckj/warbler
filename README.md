@@ -30,11 +30,11 @@ Development work:
 
 - lint the code
 
-    tox -e lint
+    tox -vv -e lint
 
 - use your the editor happily
 
-    tox -e dev
+    tox -vv -e dev
     code .
 
 - run stand-alone on the CLI

@@ -21,7 +21,6 @@ setup(
     python_requires='>=3.8.0',
     install_requires=[
         "markdown",
-        "numpy>=1.19.0",
         "textacy",
         "spacy"
     ],
@@ -50,5 +49,5 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3 :: Only'
     ],
-    keywords='markdown language passive-voice nlp'
+    keywords='markdown language lsp passive-voice nlp'
 )
